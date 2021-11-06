@@ -1,6 +1,4 @@
 
-// C++ code
-//
 #include <SoftwareSerial.h>
 
 SoftwareSerial BTSerial(0,1); // RX | TX
@@ -52,8 +50,9 @@ void loop()
 
   	digitalWrite(LED_BUILTIN, HIGH);
   	delay(1000); // Wait for 1000 millisecond(s)
-   	analogRead(A4);
-   	analogRead(A3);
+   	digitalWrite(LED_BUILTIN, LOW);
+    	delay(1000); // Wait for 1000 millisecond(s)
+    	Serial.println("Right");
 
     	digitalWrite(LED_BUILTIN, HIGH);
     	delay(1000); // Wait for 1000 millisecond(s)
@@ -68,7 +67,6 @@ void loop()
     	digitalWrite(LED_BUILTIN, LOW);
     	delay(1000); // Wait for 1000 millisecond(s)
     	Serial.println("Down");
-	ial.println("Down");
   
     if (Serial.available()){
     	BlueSerial.write(Serial.read());
